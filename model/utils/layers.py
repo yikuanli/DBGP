@@ -1,7 +1,7 @@
 import torch.nn as nn
 from model.utils import guide, prior as model
 import torch.nn.functional as F
-from model import KL
+from model.utils.divergence import KL
 from torch._jit_internal import weak_script_method
 import torch
 
