@@ -11,7 +11,7 @@ def save_model(path, model):
 
 def load_model(path, model):
     # load pretrained model and update weights
-    pretrained_dict = torch.load(path)
+    pretrained_dict = torch.load(path, map_location='cpu')
     model_dict = model.state_dict()
     # 1. filter out unnecessary keys
     pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
@@ -19,5 +19,7 @@ def load_model(path, model):
     model_dict.update(pretrained_dict)
     # 3. load the new state dict
     model.load_state_dict(model_dict)
+    del pretrained_dict
+    torch.cuda.empty_cache()
     return model
 

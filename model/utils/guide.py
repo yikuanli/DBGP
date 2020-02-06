@@ -33,7 +33,8 @@ class MeanFieldNormal(nn.Module):
         raise NotImplementedError
 
     def distribution(self):
-        dist = torch.distributions.Normal(loc=self.loc, scale=self.scale)
+        sigma = F.softplus(self.scale)
+        dist = torch.distributions.Normal(loc=self.loc, scale=sigma)
         return dist
 
 

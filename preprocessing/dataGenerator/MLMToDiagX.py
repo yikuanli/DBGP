@@ -8,14 +8,14 @@ import os
 spark = spark_init()
 
 file_config = {
-    'data': '/home/shared/yikuan/HF/Data/PureICD/diagnoses_medication.parquet',
-    'demographic': '/home/shared/01_data/02_raw/demographic.parquet'
+    'data': '',
+    'demographic': ''
 }
 
 global_params = {
-    'output_dir': '/home/shared/yikuan/ACM/data/Depression',
-    'train': 'Depression_train.parquet',
-    'test': 'Depression_test.parquet',
+    'output_dir': '',
+    'train': '',
+    'test': '',
     'min_visit': 5,
     'span': 6,
     'code_col': 'code',
