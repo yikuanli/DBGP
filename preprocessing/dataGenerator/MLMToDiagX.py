@@ -114,8 +114,7 @@ def full_gen(code, age, patid, gender, region, yob):
                 return '0', ['0'], ['0'], '0', '0', '0', -1
 
 test_udf = F.udf(full_gen, schema)
-# test = test.select(test_udf(global_params['code_col'],'age', 'patid', 'year', 'gender', 'region', 'yob').alias("test"))
-# train = train.select(test_udf(global_params['code_col'],'age', 'patid', 'year', 'gender', 'region', 'yob').alias("test"))
+
 test = test.select(test_udf(global_params['code_col'],'age', 'patid', 'gender', 'region', 'yob').alias("test"))
 train = train.select(test_udf(global_params['code_col'],'age', 'patid', 'gender', 'region', 'yob').alias("test"))
 

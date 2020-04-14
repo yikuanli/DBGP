@@ -16,7 +16,7 @@ class spark_init(object):
         else:
             config = sparkConfig
 
-        os.environ["PYSPARK_PYTHON"] = "/home/yikuan/anaconda/envs/py3/bin/python3.7"
+        os.environ["PYSPARK_PYTHON"] = ""
         pyspark_submit_args = ' --driver-memory ' + config['memory'] + ' --num-executors ' + config['excutors'] + \
                               ' --executor-memory ' + config['exe_mem']+ \
                               ' --conf spark.driver.maxResultSize={} --conf spark.memory.offHeap.size={} --conf spark.local.dir={}'\
