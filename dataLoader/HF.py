@@ -1,6 +1,6 @@
 import numpy as np
 from torch.utils.data.dataset import Dataset
-from dataLoader import seq_padding, code2index, position_idx, index_seg
+from dataLoader.utils import seq_padding, code2index, position_idx, index_seg
 import torch
 import pandas as pd
 from torch.utils.data import DataLoader
